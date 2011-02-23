@@ -1,0 +1,3 @@
+.rvmrc
+config/*.db
+.DS_Store
