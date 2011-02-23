@@ -1,3 +1,4 @@
 .rvmrc
 config/*.db
+config/*.yml
 .DS_Store
