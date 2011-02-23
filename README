@@ -1,0 +1,4 @@
+Jabberwocky is a jabber bot that I created to distribute links to the team at
+change healthcare.  Right now it's just a spike, but it works.  I plan on
+adding a web interface to display content pushed to the bot as well as an admin
+interface for managing subscribers.  Sit tight, and check back for more.
