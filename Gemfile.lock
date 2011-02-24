@@ -2,11 +2,9 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.4)
-    archive-tar-minitar (0.5.2)
     blather (0.4.15)
       eventmachine (>= 0.12.6)
       nokogiri (>= 1.4.0)
-    columnize (0.3.2)
     data_objects (0.10.3)
       addressable (~> 2.1)
     dm-core (1.0.2)
@@ -24,19 +22,7 @@ GEM
       data_objects (= 0.10.3)
     eventmachine (0.12.10)
     extlib (0.9.15)
-    linecache19 (0.5.11)
-      ruby_core_source (>= 0.1.4)
     nokogiri (1.4.4)
-    ruby-debug-base19 (0.11.24)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
-    ruby_core_source (0.1.4)
-      archive-tar-minitar (>= 0.5.2)
 
 PLATFORMS
   ruby
@@ -46,5 +32,3 @@ DEPENDENCIES
   dm-core
   dm-migrations
   dm-sqlite-adapter
-  ruby-debug-base19
-  ruby-debug19
