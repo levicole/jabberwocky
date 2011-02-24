@@ -8,7 +8,7 @@ dir = File.expand_path(File.dirname(__FILE__))
 
 DataMapper.setup(:default, "sqlite3://#{dir}/jabberwocky.db")
 
-require "#{dir}/../lib/subscriber"
+Dir.glob("#{dir}/../lib/*.rb"){ |f| require f }
 
 AppConfig = YAML.load_file("#{dir}/jabberwocky.yml")
 
