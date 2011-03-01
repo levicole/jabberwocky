@@ -38,6 +38,14 @@ message :chat?, :body => %r{/nick\s([\w\s]*)} do |m|
   end
 end
 
+message :chat? do |m|
+  if @subscriber
+    Subscriber.all(:email.not => m.from.strip!).each do |subscriber|
+      say subscriber.email, "#{@subscriber.name} says: #{m.body}"
+    end
+  end
+end
+
 def fortune
   `fortune`
 end
