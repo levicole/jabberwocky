@@ -5,16 +5,12 @@ require 'blather/client'
 setup AppConfig["jabber_id"], AppConfig["jabber_password"]
 
 subscription :request? do |s|
-  if subscriber?(s.from.strip!)
-    # @subscriber.update(:jid => s.from)
-  else
-    @subscriber = Subscriber.create(:email => s.from.strip!, :name => s.from.strip!)
-  end
+  @subscriber = Subscriber.create(:email => s.from.strip!, :name => s.from.strip!)
   write_to_stream s.approve!
 end
 
 after(:subscription, :request? => true) do |s|
-  say s.from.strip!, "Welcome to the dudes of CH jabber bot. Be sure to change your nick by sending me a message like so.\n/nick New Name"
+  say s.from.strip!, "Welcome! Be sure to change your nick by sending me a message like so.\n/nick New Name"
 end
 
 before(:message, :chat? => true) do |m|
