@@ -38,10 +38,11 @@ message :chat?, :body => %r{/nick\s([\w\s]*)} do |m|
   end
 end
 
-message :chat? do |m|
+message :chat?, :body => %r{/all\s([\w\s]*)} do |m|
   if @subscriber
+    m.body.match(%r{/all\s([\w\s]*)}){ message = $1 }
     Subscriber.all(:email.not => m.from.strip!).each do |subscriber|
-      say subscriber.email, "#{@subscriber.name} says: #{m.body}"
+      say subscriber.email, "#{@subscriber.name}: #{message}"
     end
   end
 end
